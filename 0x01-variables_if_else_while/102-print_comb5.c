@@ -12,8 +12,10 @@ int main(void)
 	for (d1 = 48; d1 <= 57; d1++)
 		for (d2 = 48; d2 < 57; d2++)
 			for (d3 = d1 ; d3 <= 57; d3++)
-				for (d4 = d2 + 1 ; d4 <= 57; d4++)
+				for (d4 = d2; d4 <= 57; d4++)
 				{
+					if (d1 == d3 && d2 == d4)
+						continue;
 					putchar(d1);
 					putchar(d2);
 					putchar(' ');
