@@ -14,7 +14,7 @@ int main(void)
 			for (d3 = d1 ; d3 <= 57; d3++)
 				for (d4 = d2; d4 <= 57; d4++)
 				{
-					if (d1 == d3 && d2 == d4)
+					if ((d3 == d1 && d4 == d2) || (d3 == d2 && d4 == d1))
 						continue;
 					putchar(d1);
 					putchar(d2);
