@@ -10,7 +10,7 @@ int main(void)
 	int d1, d2, d3, d4;
 
 	for (d1 = 48; d1 <= 57; d1++)
-		for (d2 = 48; d2 < 57; d2++)
+		for (d2 = 48; d2 <= 57; d2++)
 			for (d3 = d1 ; d3 <= 57; d3++)
 				for (d4 = d2; d4 <= 57; d4++)
 				{
