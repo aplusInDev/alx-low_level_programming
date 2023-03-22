@@ -11,11 +11,14 @@ int main(void)
 	printf("Fibonacci Series: \n");
 	for (i = 1; i < 50; ++i)
 	{
-		printf("%d ", t1);
 		nextTerm = t1 + t2;
+		printf("%d ", nextTerm);
 		t1 = t2;
 		t2 = nextTerm;
-		printf("\n");
+		if (i == 49)
+			printf("\n");
+		else
+			printf(", ");
 	}
 	return (0);
 }
