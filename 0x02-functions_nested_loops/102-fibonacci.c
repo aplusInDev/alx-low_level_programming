@@ -6,12 +6,13 @@
  */
 int main(void)
 {
-	int i, t1 = 0, t2 = 1, nextTerm;
+	int i;
+	unsigned long t1 = 0, t2 = 1, nextTerm;
 
 	for (i = 1; i < 50; ++i)
 	{
 		nextTerm = t1 + t2;
-		printf("%d ", nextTerm);
+		printf("%lu ", nextTerm);
 		t1 = t2;
 		t2 = nextTerm;
 		if (i == 49)
