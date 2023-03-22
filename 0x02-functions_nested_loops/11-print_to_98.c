@@ -24,7 +24,7 @@ void print_to_98(int n)
 			}
 			if (a)
 				_putchar('0' + a);
-			if (b)
+			if (a ||  b)
 				_putchar('0' + b);
 			_putchar('0' + c);
 			n++;
