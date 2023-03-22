@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int i, n = 50, t1 = 1, t2 = 2, nextTerm;
+	int i, n = 100, t1 = 1, t2 = 2, nextTerm;
 
 	printf("Fibonacci Series: \n");
 	for (i = 1; i <= n; ++i)
