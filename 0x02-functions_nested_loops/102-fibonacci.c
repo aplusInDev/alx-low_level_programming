@@ -6,17 +6,18 @@
  */
 int main(void)
 {
-	int i;
-	long long int fib[50];
+	int i, t1 = 0, t2 = 1, nextTerm;
 
-	fib[0] = 1;
-	fib[1] = 2;
-	printf("%lld, %lld", fib[0], fib[1]);
-	for (i = 2; i < 50; i++)
+	for (i = 1; i < 50; ++i)
 	{
-		fib[i] = fib[i - 1] + fib[i - 2];
-		printf(", %lld", fib[i]);
+		nextTerm = t1 + t2;
+		printf("%d ", nextTerm);
+		t1 = t2;
+		t2 = nextTerm;
+		if (i == 49)
+			printf("\n");
+		else
+			printf(", ");
 	}
-	printf("\n");
 	return (0);
 }
