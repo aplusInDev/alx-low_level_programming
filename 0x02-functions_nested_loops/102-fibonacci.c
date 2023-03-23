@@ -7,18 +7,16 @@
 int main(void)
 {
 	int i;
-	unsigned long t1 = 0, t2 = 1, nextTerm;
+	long long int fib[50];
 
-	for (i = 1; i < 50; i++)
+	fib[0] = 1;
+	fib[1] = 2;
+	printf("%lld, %lld", fib[0], fib[1]);
+	for (i = 2; i < 50; i++)
 	{
-		nextTerm = t1 + t2;
-		printf("%lu", nextTerm);
-		t1 = t2;
-		t2 = nextTerm;
-		if (i == 49)
-			printf("\n");
-		else
-			printf(", ");
+		fib[i] = fib[i - 1] + fib[i - 2];
+		printf(", %lld", fib[i]);
 	}
+	printf("\n");
 	return (0);
 }
