@@ -8,29 +8,14 @@
  */
 void print_number(int n)
 {
-	int a, b, c, d;
+	int tmp = n;
 
 	if (n < 0)
 	{
-		n = -n;
-		a = n / 1000;
-		b = (n / 100) % 10;
-		c = (n / 10) % 10;
-		d = n % 10;
 		_putchar('-');
+		tmp  = -tmp;
 	}
-	else
-	{
-		a = n / 1000;
-		b = (n / 100) % 10;
-		c = (n / 10) % 10;
-		d = n % 10;
-	}
-	if (a)
-		_putchar('0' + a);
-	if (a || b)
-		_putchar('0' + b);
-	if ((a || b) || c)
-		_putchar('0' + c);
-	_putchar('0' + d);
+	if ((tmp / 10) > 0)
+		print_number(tmp / 10);
+	_putchar((tmp % 10) + 48);
 }
