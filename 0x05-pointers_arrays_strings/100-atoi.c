@@ -9,23 +9,16 @@
  */
 int _atoi(char *s)
 {
-	int i, result = 0, count1 = 0, count2 = 0;
+	int i, result = 0, sign = 1;
 
 	for (i = 0;  s[i] != '\0'; i++)
 	{
 		if (s[i] <= '9' && s[i] >= '0')
-		{
-			if (!result)
-				result += (s[i] - 48);
-			else
-				result = ((result * 10) + (s[i] - 48));
-			if (s[i + 1] == ' ')
-				break;
-		}
-		if (s[i] == '+')
-			count1++;
-		if (s[i] == '-')
-			count2++;
+			result = (result * 10) + (s[i] - 48);
+		else if (s[i] == '-')
+			sign *= -1;
+		else if (result > 0)
+			break;
 	}
-	return ((count1 < count2) ? (-result) : (result));
+	return (result * sign);
 }
