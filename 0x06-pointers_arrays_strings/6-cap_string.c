@@ -1,21 +1,5 @@
 #include "main.h"
 /**
- * remove_tab - task 6
- * @s: parameter
- *
- * Return: string
- */
-
-char *remove_tab(char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		if (s[i] == '\t')
-			s[i] = ' ';
-	return (s);
-}
-/**
  * is_lower - task 6
  * @c: parameter
  *
@@ -52,7 +36,6 @@ char *cap_string(char *s)
 	char *p = s;
 	int tmp = 1;
 
-	s = remove_tab(s);
 	while (*s)
 	{
 		if (is_delimiter(*s))
