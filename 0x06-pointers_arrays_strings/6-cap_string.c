@@ -10,7 +10,7 @@ int is_lower(char c)
 	return (c >= 97 && c <= 122);
 }
 /**
- * is_delimited - task 6
+ * is_delimiter - task 6
  * @c: parameter
  *
  * Return: integer
