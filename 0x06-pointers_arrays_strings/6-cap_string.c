@@ -15,12 +15,12 @@ int is_lower(char c)
  *
  * Return: integer
  */
-int is_delimited(char c)
+int is_delimiter(char c)
 {
 	int i;
-	char delimiter[] = "\t\n,.!?|"()[]";
+	char delimiter[] = "\t\n,.!?|\"()[] ";
 
-	for (i = 0; i < 12; i++)
+	for (i = 0; i < 13; i++)
 		if (c == delimiter[i])
 			return (1);
 	return (0);
@@ -38,7 +38,7 @@ char *cap_string(char *s)
 
 	while (*s)
 	{
-		if (is_dilimiter(*s))
+		if (is_delimiter(*s))
 			tmp = 1;
 		else if (is_lower(*s) && tmp)
 		{
