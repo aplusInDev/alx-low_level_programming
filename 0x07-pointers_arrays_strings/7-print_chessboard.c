@@ -1,23 +1,20 @@
 #include "main.h"
-#include <string.h>
-#include <stddef.h>
 #include <stdio.h>
 
 /**
- * print_chessboard - task 6
- * @a: ptr to an array of 8 characters
+ * print_diagsums - task 7
+ * @a: ptr to an array of integers
+ * @size: size of array
  */
 
-void print_chessboard(char (*a)[8])
+void print_diagsums(int *a, int size)
 {
-	int i, j;
+	int i, sum1 = 0, sum2 = 0;
 
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < size * size; i += size + 1)
 	{
-		for (j = 0; j < 8; j++)
-		{
-			putchar(a[i][j]);
-		}
-		putchar('\n');
+		sum1 += *(a + i);
+		sum2 += *(a + (size - 1) + (i - (size - 1)) * (i / (size - 1)));
 	}
+	printf("%d, %d\n", sum1, sum2);
 }
