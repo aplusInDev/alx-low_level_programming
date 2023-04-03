@@ -9,23 +9,23 @@
  *
  * Return: h (success) or NULL if not
  */
-
 char *_strstr(char *haystack, char *needle)
 {
 	while (*haystack != '\0')
 	{
 		char *h = haystack;
+		char *n = needle;
 
-		while (*haystack != '\0' && *needle != '\0' && *haystack == *needle)
+		while (*haystack != '\0' && *n != '\0' && *haystack == *n)
 		{
 			haystack++;
-			needle++;
+			n++;
 		}
-		if (*needle == '\0')
+		if (*n == '\0')
 		{
 			return (h);
 		}
-		haystack++;
+		haystack = h + 1;
 	}
 	return (NULL);
 }
