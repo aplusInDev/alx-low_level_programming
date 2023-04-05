@@ -1,6 +1,28 @@
 #include "main.h"
 
 /**
+ * is_prime - check if n is prime
+ * @n: passed integer
+ * @i: counter
+ */
+void is_prime(int *n, int i)
+{
+	if (*n <= 2)
+	{
+		*n = 0;
+	}
+
+	if (*n % i == 0 && i != *n)
+	{
+		*n = 0;
+		return;
+	}
+	if (i < 9)
+		is_prime(n, i + 1);
+	else
+		*n = 1;
+}
+/**
  * is_prime_number - task 6
  * @n: passed integer
  *
@@ -8,19 +30,7 @@
  */
 int is_prime_number(int n)
 {
-	int i = 2;
+	is_prime(&n, 2);
 
-	if (n == 1 || n == -1)
-	{
-		return (0);
-	}
-	while (i < 9)
-	{
-		if (n % i == 0 && i != n)
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	return (n);
 }
