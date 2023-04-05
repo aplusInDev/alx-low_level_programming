@@ -1,5 +1,20 @@
 #include "main.h"
-
+/**
+ * _sqrt - same as sqrt
+ * @n: passed integer
+ * @i: counter
+ *
+ * Return: i
+ */
+void _sqrt(int *n, int i)
+{
+	if (i * i == *n)
+		*n = i;
+	else if (i * i < *n)
+		_sqrt(n, i + 1);
+	else
+		*n = -1;
+}
 /**
  * _sqrt_recursion - task 5
  * @n: passed integer
@@ -8,13 +23,6 @@
  */
 int _sqrt_recursion(int n)
 {
-	int i = 0;
-
-	while (i * i != n && i <= n + 1)
-	{
-		i++;
-		if (i > n)
-			return (-1);
-	}
-	return (i);
+	_sqrt(&n, 0);
+	return (n);
 }
