@@ -2,6 +2,32 @@
 #include <stdlib.h>
 #include <string.h>
 /**
+ * _atoi - convert string to integer
+ * @s: passed string
+ *
+ * Return: number
+ */
+int _atoi(char *s)
+{
+	unsigned int i, result = 0, sign = 1;
+
+	for (i = 0;  s[i] != '\0'; i++)
+	{
+		if (s[i] <= '9' && s[i] >= '0')
+			result = (result * 10) + (s[i] - 48);
+		else if (s[i] == '-')
+			sign *= -1;
+		else if (result > 0)
+			break;
+		else
+		{
+			puts("Error");
+			exit (1);
+		}
+	}
+	return (result * sign);
+}
+/**
  * main - task 0
  * @argc: argument count
  * @argv: argument vector
@@ -14,12 +40,7 @@ int main(int argc, char *argv[])
 
 	while (i < argc)
 	{
-		if (!atoi(argv[i]))
-		{
-			puts("Error");
-			return (1);
-		}
-		sum += atoi(argv[i]);
+		sum += _atoi(argv[i]);
 		i++;
 	}
 	printf("%d\n", sum);
