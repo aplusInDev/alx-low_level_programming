@@ -18,11 +18,13 @@ int _atoi(char *s)
 		else if (s[i] == '-')
 			sign *= -1;
 		else if (result > 0)
+		{
 			break;
+		}
 		else
 		{
 			puts("Error");
-			exit (1);
+			exit(1);
 		}
 	}
 	return (result * sign);
