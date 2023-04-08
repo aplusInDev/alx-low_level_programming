@@ -1,5 +1,4 @@
-#include "_putchar.c"
-#include "main.h"
+#include <stdio.h>
 /**
  * main - task 0
  * @argc: argument count
@@ -9,14 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 0;
-
 	(void)argc;
-	while (*(argv[0] + i) != '\0')
-	{
-		_putchar(*(argv[0] + i));
-		i++;
-	}
-	_putchar('\n');
+	printf("%s\n", argv[0]);
 	return (0);
 }
