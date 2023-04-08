@@ -25,6 +25,7 @@ int _atoi(char *s)
 		{
 			puts("Error");
 			exit(1);
+			return(1);
 		}
 	}
 	return (result * sign);
