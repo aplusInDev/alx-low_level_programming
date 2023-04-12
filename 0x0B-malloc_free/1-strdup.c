@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * _strdup - task 1
  * @str: passed string
@@ -7,20 +8,12 @@
  */
 char *_strdup(char *str)
 {
-	int i = 0, size = 0;
-	char *m;
+	char *cp = malloc(sizeof(str));
+	int i;
 
-	if (str == NULL)
+	if (str == NULL || cp == NULL)
 		return (NULL);
-	for (; str[size] != '\0; size++)
-		;
-	m = malloc(size * sizeof(*str) + 1);
-	if (m == 0)
-		return (NULL);
-	else
-	{
-		for (; i < size; i++)
-			m[i] = str[i];
-	}
-	return (m);
+	for (i = 0; str[i] != '\0'; i++)
+		cp[i] = str[i];
+	return (cp);
 }
