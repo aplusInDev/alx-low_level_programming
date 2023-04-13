@@ -11,7 +11,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *concat_str;
-	int l = 0, i, j, count;
+	int i, j, count = 0, l = 0;
 
 	if (ac < 1 || av == NULL)
 		return (NULL);
