@@ -13,7 +13,7 @@ char *argstostr(int ac, char **av)
 	char *concat_str;
 	int l = 0, i, j, count;
 
-	if (ac <= 1 || av == NULL)
+	if (ac < 1 || av == NULL)
 		return (NULL);
 	for (; i < ac; i++)
 		count += strlen(av[i]);
