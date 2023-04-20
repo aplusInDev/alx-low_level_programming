@@ -61,7 +61,7 @@ void print_all(const char * const format, ...)
 	va_list arg;
 	token_t tokens[] = {
 		{"c", format_char},
-		{"i", format_int},
+		{"i", format_integer},
 		{"f", format_float},
 		{"s", format_string},
 		{NULL, NULL}
@@ -73,7 +73,7 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (tokens[j].t)
 		{
-			if (format[i] == token[j].t[0])
+			if (format[i] == tokens[j].t[0])
 			{
 				tokens[j].f(separator, arg);
 				separator = ", ";
