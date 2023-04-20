@@ -12,18 +12,21 @@ int main(int ac, char *av[])
 
 	if (ac != 4)
 	{
-		printf("Error\n"), exit(98);
+		printf("Error\n");
+		exit(98);
 	}
 	a = atoi(av[1]);
 	b = atoi(av[3]);
 	op_fn = get_op_func(av[2]);
 	if (!op_fn)
 	{
-		printf("Error\n"), exit(99);
+		printf("Error\n");
+		exit(99);
 	}
 	if (!b && (av[2][0] == '/' || av[2][0] == '%'))
 	{
-		printf("Error\n"), exit(100);
+		printf("Error\n");
+		exit(100);
 	}
 	printf("%d\n", op_fn(a, b));
 	return (0);
