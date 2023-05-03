@@ -10,10 +10,6 @@ listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *tmp, *root;
 
-<<<<<<< HEAD
-	/*root = (listint_t *) malloc(sizeof(listint_t));*/
-=======
->>>>>>> fab315987a9dbeba97323a41ded08a846e83ae71
 	root = NULL;
 	if (!(*head))
 		return (NULL);
