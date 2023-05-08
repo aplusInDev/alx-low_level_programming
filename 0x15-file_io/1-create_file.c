@@ -1,7 +1,8 @@
 #include "main.h"
+#include <string.h>
 
 /**
- * create_file - reads a text file and prints it to the POSIX standard output
+ * create_file - creates a file
  * @filename: name of the file to read
  * @text_content: created file content
  *

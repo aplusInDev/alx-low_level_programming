@@ -1,7 +1,8 @@
 #include "main.h"
+#include <string.h>
 
 /**
- * append_text_to_file -  appends text at the end of a file 
+ * append_text_to_file -  appends text at the end of a file
  * @filename: name of the file to read
  * @text_content: NULL terminated string to add at the end of the file
  *
