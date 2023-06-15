@@ -9,8 +9,15 @@
 int sum_dlistint(dlistint_t *head)
 {
 	int sum = 0;
+	dlistint_t *curr;
 
-	for (; head != NULL; sum += head->n)
-		head = head->next;
+	if (head == NULL)
+		return (0);
+	curr = head;
+	while (curr)
+	{
+		sum = sum + curr->n;
+		curr = curr->next;
+	}
 	return (sum);
 }
