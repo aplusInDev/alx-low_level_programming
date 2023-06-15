@@ -9,44 +9,37 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	size_t len = dlistint_len(*h);
-	int i;
-	dlistint_t *curr, *new_node;
+	dlistint_t *new_node, *next, *curr;
+	unsigned int i;
 
-	if (len < idx)
+	if (h == NULL)
 		return (NULL);
-	if (!idx)
-		new_node = add_dnodeint(h, n);
-	else if (idx == len)
-		new_node = add_dnodeint_end(h, n);
+	if (idx != 0)
+	{
+		curr = *h;
+		for (i = 0; i < idx - 1 && curr != NULL; i++)
+			curr = curr->next;
+		if (curr == NULL)
+			return (NULL);
+	}
+	new_node = malloc(sizeof(dlistint_t));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->n = n;
+	if (idx == 0)
+	{
+		next = *h;
+		*h = new_node;
+		new_node->prev = NULL;
+	}
 	else
 	{
-		new_node = malloc(sizeof(dlistint_t));
-		if (!new_node)
-			return (NULL);
-		for (curr = *h, i = 0; i < (int)idx; i++, curr = curr->next)
-			;
-		new_node->n = n;
-		curr->prev->next = new_node;
-		new_node->prev = curr->prev;
-		new_node->next = curr;
-		curr->prev = new_node;
+		new_node->prev = curr;
+		next = curr->next;
+		curr->next = new_node;
 	}
+	new_node->next = next;
+	if (new_node->next != NULL)
+		new_node->next->prev = new_node;
 	return (new_node);
-}
-
-/**
- * dlistint_len - returns number of nodes
- * in giving dbly linked list
- * @h: head
- * Return: number of nodes
- */
-size_t dlistint_len(const dlistint_t *h)
-{
-	size_t len = 0;
-	dlistint_t *curr;
-
-	for (curr = h; curr; curr = curr->next, len++)
-		;
-	return (len);
 }
