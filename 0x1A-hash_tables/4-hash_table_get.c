@@ -4,7 +4,7 @@
  * hash_table_get -  returns value associated with a giving key
  * @ht: giving hash table
  * @key: giving key
- * 
+ *
  * Return: value associated with the element (success), or NULL
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)

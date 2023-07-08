@@ -3,7 +3,7 @@
 /**
  * hash_table_delete - deletes giving hash table
  * @ht: giving hash table
- * 
+ *
  * Return: nothing
  */
 void hash_table_delete(hash_table_t *ht)
@@ -21,7 +21,7 @@ void hash_table_delete(hash_table_t *ht)
 /**
  * free_list - frees list
  * @array: list
- * 
+ *
  * Return: nothing
  */
 void free_list(hash_node_t *array)

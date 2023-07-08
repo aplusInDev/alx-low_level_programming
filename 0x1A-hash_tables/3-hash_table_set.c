@@ -5,7 +5,7 @@
  * @ht: giving hash table to update
  * @key: giving key
  * @value: giving value
- * 
+ *
  * Return: 11 (success)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)

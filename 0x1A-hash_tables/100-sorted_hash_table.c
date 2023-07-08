@@ -3,7 +3,7 @@
 /**
  * shash_table_create - creates a hash table aith a sorted list.
  * @size: size of the array
- * 
+ *
  * Return: pointer to the newly created hash table or NULL (fail)
  */
 shash_table_t *shash_table_create(unsigned long int size)
@@ -28,7 +28,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  * @ht: hash table you want to add or update the key/value to
  * @key: is the key, can't be empty
  * @value: is the value associated with the key
- * 
+ *
  * Return: 1 if it succeeded, 0 otherwise
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
@@ -76,7 +76,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * set_sorted_list - sets the sorted list
  * @ht: hash table
  * @node: node to be set
- * 
+ *
  * Return: nothing
  */
 void set_sorted_list(shash_table_t *ht, shash_node_t *node)
@@ -127,7 +127,7 @@ void set_sorted_list(shash_table_t *ht, shash_node_t *node)
  * shash_table_get -  retrieves a value associated with a key.
  * @ht: hash table
  * @key: key
- * 
+ *
  * Return: value associated with the element or NULL
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
@@ -148,7 +148,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 /**
  * shash_table_print - prints sorted hash table
  * @ht: hash table
- * 
+ *
  * Return: nothing
  */
 void shash_table_print(const shash_table_t *ht)
@@ -171,7 +171,7 @@ void shash_table_print(const shash_table_t *ht)
 /**
  * shash_table_print_rev - prints sorted hash table in reverse
  * @ht: hash table
- * 
+ *
  * Return: nothing
  */
 void shash_table_print_rev(const shash_table_t *ht)
@@ -195,7 +195,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 /**
  * shash_table_delete - deletes a hash table.
  * @ht: hash table
- * 
+ *
  * Return: nothing
  */
 void shash_table_delete(shash_table_t *ht)
@@ -213,7 +213,7 @@ void shash_table_delete(shash_table_t *ht)
 /**
  * free_slist - frees list
  * @array: list
- * 
+ *
  * Return: nothing
  */
 void free_slist(shash_node_t *array)
