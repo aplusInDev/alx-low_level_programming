@@ -33,7 +33,8 @@ def count_waters(grid, column, row_idx, column_idx):
         ru = 1
 
     """up is row_idx - 1, same column_idx"""
-    if (lu == 0 and ru == 0) and (row_idx <= 0 or grid[row_idx - 1][column_idx] == 0):
+    my_cond1 = (row_idx <= 0 or grid[row_idx - 1][column_idx] == 0)
+    if (lu == 0 and ru == 0) and my_cond1:
         water_counter += 1
 
     """down row_idx + 1, same column_idx"""
@@ -50,7 +51,8 @@ def count_waters(grid, column, row_idx, column_idx):
         water_counter += 1
 
     """left same row_idx, column_idx - 1"""
-    if (ld == 0 and lu == 0) and (column_idx <= 0 or grid[row_idx][column_idx - 1] == 0):
+    my_cond2 = (column_idx <= 0 or grid[row_idx][column_idx - 1] == 0)
+    if (ld == 0 and lu == 0) and my_cond2:
         water_counter += 1
 
     return water_counter
