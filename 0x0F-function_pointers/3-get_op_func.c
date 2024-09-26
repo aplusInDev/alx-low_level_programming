@@ -1,11 +1,15 @@
 #include "3-calc.h"
 /**
- * get_op_func - selects the correct function
- * to perform the operation asked by the user
- * @s: giving function
+ *  get_op_func - takes s as parameter and
+ * returns a pointer to function that accept
+ * two integers and returns an integer
  *
- * Return: integer
- */
+ * Args:
+ *  @s: the operation sign (e.g: +, -, etc)
+ *
+ * Return:
+ *  pointer to function or NULL
+*/
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
